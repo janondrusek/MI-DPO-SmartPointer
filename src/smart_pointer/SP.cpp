@@ -5,11 +5,12 @@
  *      Author: Ján Ondrušek
  */
 
+#include "RC.h"
 #include "SP.h"
 
 using namespace std;
 
-SP::SP() :
+template<typename T> SP<T>::SP() :
 		pData(0), reference(0) {
 	// Create a new reference
 	reference = new RC();
@@ -33,7 +34,7 @@ template<typename T> SP<T>::SP(const SP<T>& sp) :
 	reference->AddRef();
 }
 
-SP::~SP() {
+template<typename T> SP<T>::~SP() {
 	// Destructor
 	// Decrement the reference count
 	// if reference become zero delete the data

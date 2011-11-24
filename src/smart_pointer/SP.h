@@ -11,9 +11,6 @@
 using namespace std;
 
 template<typename T> class SP {
-private:
-	T* pData; // pointer
-	RC* reference; // Reference count
 
 public:
 	SP();
@@ -29,6 +26,11 @@ public:
 	T* operator->();
 
 	SP<T>& operator=(const SP<T>& sp);
+
+private:
+	T* pData; // pointer
+	RC* reference; // Reference count
+
 };
 
 #endif /* SP_H_ */
