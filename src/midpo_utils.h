@@ -5,16 +5,14 @@
 #define MIDPOUTILS_H_
 
 #include "Agent.h"
+#include "smart_pointer/SP.h"
 #include <string>
 #include <list>
-#include <vector>
+#include <map>
 
 using namespace std;
 
-/**
- * This may be changed! And probably will be :)
- */
-typedef Agent* AgentPointer;
+typedef SP<Agent> AgentPointer;
 
 string serializeStringList(StringList list);
 

@@ -11,21 +11,18 @@
 #include "Object.h"
 #include "logging/Loggable.h"
 #include "logging/EventLogger.h"
-#include <map>
-#include <list>
 #include <string>
-#include "Agent.h"
+#include "midpo_utils.h"
 
 using namespace std;
 
-class Location:  public Loggable, public Object {
+class Location: public Loggable, public Object {
 private:
 public:
 	Location(EventLogger* logger, string s);
 	virtual ~Location();
 
 	string getName();
-
 
 	void setName(string newName);
 };

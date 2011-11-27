@@ -1,15 +1,14 @@
 /*
  * RC.cpp
  *
- *  Created on: 24.11.2011
+ *  Created on: 27.11.2011
  *      Author: Ján Ondrušek
  */
 
 #include "RC.h"
 
-using namespace std;
-
 RC::RC() {
+
 }
 
 RC::~RC() {

@@ -25,6 +25,7 @@ bool isEventInRange(StringVector events, string event, int from, int to)
 {
 	for (int i = from; i <= to; i++)
 	{
+		cout << event;
 		if (events[i] == event)
 		{
 			return true;
