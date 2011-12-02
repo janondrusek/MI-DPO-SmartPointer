@@ -18,12 +18,19 @@ WorldFacadeSmartPointerImpl::WorldFacadeSmartPointerImpl(EventLogger* logger) {
 
 WorldFacadeSmartPointerImpl::~WorldFacadeSmartPointerImpl() {
 	cout << "Delete world! locations: " << locations.size() << endl;
+
+	list<string> locationNames;
 	for (LocationSmartPointerMap::iterator it = locations.begin();
 			it != locations.end(); it++) {
-		deleteLocation(it->second->getName());
+		locationNames.push_back(it->second->getName());
 	}
+
+	for (list<string>::iterator it = locationNames.begin();
+			it != locationNames.end(); it++) {
+		deleteLocation(*it);
+	}
+
 	getLogger()->logEvent(EventLogger::destructorString());
-	cout << "Deleted world! locations: " << locations.size() << endl;
 }
 
 void WorldFacadeSmartPointerImpl::createLocation(string lName) {
@@ -32,12 +39,6 @@ void WorldFacadeSmartPointerImpl::createLocation(string lName) {
 }
 
 void WorldFacadeSmartPointerImpl::deleteLocation(string lName) {
-	cout << "Adios location " << lName << endl;
-	AgentList agentsInside = locations[lName]->agentsInside();
-	for (AgentList::const_iterator it2 = agentsInside.begin();
-			it2 != agentsInside.end(); it2++) {
-		locations[lName]->agentLeaves(it2->second);
-	}
 	locations.erase(lName);
 }
 

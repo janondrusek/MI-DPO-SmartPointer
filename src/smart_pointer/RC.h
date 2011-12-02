@@ -13,8 +13,9 @@ public:
 	RC();
 	virtual ~RC();
 
-	void RC::AddRef();
-	int RC::Release();
+	void AddRef();
+	int Release();
+	int getRefsCount();
 
 private:
 	int count; // Reference count

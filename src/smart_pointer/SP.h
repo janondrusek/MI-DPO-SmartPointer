@@ -47,10 +47,10 @@ public:
 		// Destructor
 		// Decrement the reference count
 		// if reference become zero delete the data
+		cout << "Bye bye " << pData << " refs " << reference->getRefsCount() << "\n";
 		if (reference->Release() == 0) {
 			delete pData;
 			delete reference;
-			cout << "Bye bye" << reference << "\n";
 		}
 	}
 

@@ -5,10 +5,13 @@
  *      Author: Ján Ondrušek
  */
 
+using namespace std;
+
 #include "RC.h"
+#include <iostream>
 
 RC::RC() {
-
+	count = 0;
 }
 
 RC::~RC() {
@@ -25,3 +28,6 @@ int RC::Release() {
 	return --count;
 }
 
+int RC::getRefsCount() {
+	return count;
+}
