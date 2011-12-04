@@ -8,7 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include src/naive_impl/subdir.mk
+-include src/smart_pointer/subdir.mk
 -include src/logging/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
@@ -40,19 +40,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: mi-dpo_cv1
+all: MI-DPO-SmartPointer
 
 # Tool invocations
-mi-dpo_cv1: $(OBJS) $(USER_OBJS)
+MI-DPO-SmartPointer: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Cygwin C++ Linker'
-	g++ -L"D:\cygwin\usr\include" -L"D:\cygwin\lib\gcc\i686-pc-cygwin\3.4.4\include" -L"D:\cygwin\usr\include\w32api" -o "mi-dpo_cv1" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L"D:\Applications\cygwin\usr\include" -L"D:\Applications\cygwin\usr\include\w32api" -L"D:\Applications\cygwin\lib\gcc\i686-pc-cygwin\3.4.4\include" -o "MI-DPO-SmartPointer" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) mi-dpo_cv1
+	-$(RM) $(C++_DEPS)$(OBJS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) MI-DPO-SmartPointer
 	-@echo ' '
 
 .PHONY: all clean dependents
