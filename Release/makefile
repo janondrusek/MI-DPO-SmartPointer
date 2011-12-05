@@ -41,19 +41,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: MI-DPO-SmartPointer
+all: mi-dpo_sp
 
 # Tool invocations
-MI-DPO-SmartPointer: $(OBJS) $(USER_OBJS)
+mi-dpo_sp: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++  -o "MI-DPO-SmartPointer" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "mi-dpo_sp" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) MI-DPO-SmartPointer
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) mi-dpo_sp
 	-@echo ' '
 
 .PHONY: all clean dependents
